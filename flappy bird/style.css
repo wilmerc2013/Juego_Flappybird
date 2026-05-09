@@ -1,0 +1,313 @@
+/* =============================================
+   RESET Y BASE
+   ============================================= */
+*, *::before, *::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html, body {
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+  font-family: 'Segoe UI', system-ui, sans-serif;
+  background: #1a1a2e;
+  touch-action: none; /* evita scroll en móvil */
+}
+
+/* =============================================
+   CANVAS
+   ============================================= */
+#gameCanvas {
+  display: block;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+}
+
+/* =============================================
+   CAPA UI (sobre el canvas)
+   ============================================= */
+#ui {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  pointer-events: none; /* deja pasar clics al canvas por defecto */
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+/* =============================================
+   PANTALLAS (inicio, pausa, game over)
+   ============================================= */
+.screen {
+  pointer-events: all;
+  background: rgba(10, 10, 30, 0.88);
+  backdrop-filter: blur(12px);
+  border: 1px solid rgba(255,255,255,0.12);
+  border-radius: 24px;
+  padding: 36px 40px;
+  text-align: center;
+  color: #fff;
+  max-width: 360px;
+  width: 90%;
+  box-shadow: 0 8px 40px rgba(0,0,0,0.6);
+  animation: fadeIn 0.3s ease;
+}
+
+.screen.hidden { display: none; }
+.screen.active  { display: block; }
+
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(20px); }
+  to   { opacity: 1; transform: translateY(0); }
+}
+
+/* =============================================
+   TIPOGRAFÍA
+   ============================================= */
+.title {
+  font-size: 2.4rem;
+  font-weight: 800;
+  background: linear-gradient(135deg, #f9ca24, #f0932b, #eb4d4b);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  margin-bottom: 8px;
+  letter-spacing: -1px;
+}
+
+.subtitle {
+  font-size: 0.9rem;
+  color: rgba(255,255,255,0.6);
+  margin-bottom: 24px;
+  line-height: 1.4;
+}
+
+.hint {
+  font-size: 0.78rem;
+  color: rgba(255,255,255,0.4);
+  margin-top: 14px;
+}
+
+.gameover-title {
+  font-size: 2rem;
+  font-weight: 800;
+  color: #eb4d4b;
+  margin-bottom: 20px;
+}
+
+/* =============================================
+   SELECTOR DE SKIN
+   ============================================= */
+.skin-selector {
+  margin-bottom: 16px;
+}
+
+.skin-label {
+  font-size: 0.82rem;
+  color: rgba(255,255,255,0.55);
+  margin-bottom: 10px;
+}
+
+.skins {
+  display: flex;
+  justify-content: center;
+  gap: 10px;
+}
+
+.skin-btn {
+  font-size: 1.6rem;
+  background: rgba(255,255,255,0.08);
+  border: 2px solid transparent;
+  border-radius: 12px;
+  width: 52px;
+  height: 52px;
+  cursor: pointer;
+  transition: all 0.2s;
+  pointer-events: all;
+}
+
+.skin-btn:hover {
+  background: rgba(255,255,255,0.18);
+  transform: scale(1.1);
+}
+
+.skin-btn.active {
+  border-color: #f9ca24;
+  background: rgba(249,202,36,0.15);
+  transform: scale(1.12);
+}
+
+/* =============================================
+   BOTÓN MODO DÍA/NOCHE
+   ============================================= */
+.mode-selector {
+  margin-bottom: 16px;
+}
+
+.mode-btn {
+  background: rgba(255,255,255,0.08);
+  border: 1px solid rgba(255,255,255,0.2);
+  color: #fff;
+  border-radius: 20px;
+  padding: 7px 18px;
+  font-size: 0.82rem;
+  cursor: pointer;
+  transition: all 0.2s;
+  pointer-events: all;
+}
+
+.mode-btn:hover {
+  background: rgba(255,255,255,0.18);
+}
+
+/* =============================================
+   RÉCORD EN INICIO
+   ============================================= */
+.best-score {
+  font-size: 0.85rem;
+  color: #f9ca24;
+  margin-bottom: 18px;
+  min-height: 20px;
+}
+
+/* =============================================
+   PANEL DE PUNTUACIONES (game over)
+   ============================================= */
+.scores-panel {
+  background: rgba(255,255,255,0.06);
+  border-radius: 14px;
+  padding: 16px 20px;
+  margin-bottom: 22px;
+}
+
+.score-row {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 6px 0;
+  font-size: 1rem;
+  color: rgba(255,255,255,0.8);
+  border-bottom: 1px solid rgba(255,255,255,0.08);
+}
+
+.score-row:last-child { border-bottom: none; }
+
+.score-row.best {
+  color: #f9ca24;
+  font-weight: 700;
+  font-size: 1.05rem;
+}
+
+.score-row span:last-child {
+  font-weight: 700;
+  font-size: 1.2rem;
+}
+
+/* =============================================
+   BOTONES
+   ============================================= */
+.btn-primary {
+  display: block;
+  width: 100%;
+  padding: 14px;
+  background: linear-gradient(135deg, #f9ca24, #f0932b);
+  color: #1a1a2e;
+  font-size: 1rem;
+  font-weight: 700;
+  border: none;
+  border-radius: 14px;
+  cursor: pointer;
+  transition: all 0.2s;
+  pointer-events: all;
+  margin-bottom: 10px;
+  letter-spacing: 0.5px;
+}
+
+.btn-primary:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 6px 20px rgba(249,202,36,0.4);
+}
+
+.btn-primary:active { transform: translateY(0); }
+
+.btn-secondary {
+  display: block;
+  width: 100%;
+  padding: 12px;
+  background: rgba(255,255,255,0.08);
+  color: rgba(255,255,255,0.8);
+  font-size: 0.9rem;
+  font-weight: 600;
+  border: 1px solid rgba(255,255,255,0.15);
+  border-radius: 14px;
+  cursor: pointer;
+  transition: all 0.2s;
+  pointer-events: all;
+}
+
+.btn-secondary:hover {
+  background: rgba(255,255,255,0.16);
+}
+
+/* =============================================
+   HUD (puntuación + pausa durante el juego)
+   ============================================= */
+#hud {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  padding: 16px 20px;
+  pointer-events: none;
+}
+
+#hud.hidden { display: none; }
+
+.score {
+  font-size: 2.8rem;
+  font-weight: 900;
+  color: #fff;
+  text-shadow: 0 2px 8px rgba(0,0,0,0.5), 0 0 20px rgba(249,202,36,0.3);
+  letter-spacing: -1px;
+  pointer-events: none;
+}
+
+.pause-btn {
+  background: rgba(0,0,0,0.35);
+  border: 1px solid rgba(255,255,255,0.2);
+  color: #fff;
+  font-size: 1.2rem;
+  width: 44px;
+  height: 44px;
+  border-radius: 12px;
+  cursor: pointer;
+  transition: all 0.2s;
+  pointer-events: all;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.pause-btn:hover {
+  background: rgba(255,255,255,0.2);
+}
+
+/* =============================================
+   RESPONSIVE
+   ============================================= */
+@media (max-width: 400px) {
+  .screen { padding: 28px 24px; }
+  .title  { font-size: 2rem; }
+  .score  { font-size: 2.2rem; }
+}

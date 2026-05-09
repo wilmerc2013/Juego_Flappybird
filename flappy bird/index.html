@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no" />
+  <title>Flappy Bird</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <!-- Canvas principal del juego -->
+  <canvas id="gameCanvas"></canvas>
+
+  <!-- UI superpuesta al canvas -->
+  <div id="ui">
+
+    <!-- Pantalla de inicio -->
+    <div id="startScreen" class="screen active">
+      <h1 class="title">🐦 Flappy Bird</h1>
+      <p class="subtitle">Esquiva los tubos y vuela lo más lejos posible</p>
+
+      <!-- Selector de skin -->
+      <div class="skin-selector">
+        <p class="skin-label">Elige tu pájaro:</p>
+        <div class="skins">
+          <button class="skin-btn active" data-skin="0" title="Clásico">🐦</button>
+          <button class="skin-btn" data-skin="1" title="Pingüino">🐧</button>
+          <button class="skin-btn" data-skin="2" title="Búho">🦉</button>
+          <button class="skin-btn" data-skin="3" title="Loro">🦜</button>
+        </div>
+      </div>
+
+      <!-- Selector de modo día/noche -->
+      <div class="mode-selector">
+        <button id="toggleMode" class="mode-btn">🌙 Modo Noche</button>
+      </div>
+
+      <div class="best-score" id="bestScoreDisplay"></div>
+
+      <button id="startBtn" class="btn-primary">▶ Jugar</button>
+      <p class="hint">Espacio / Clic / Toque para volar</p>
+    </div>
+
+    <!-- HUD durante el juego -->
+    <div id="hud" class="hidden">
+      <div id="scoreDisplay" class="score">0</div>
+      <button id="pauseBtn" class="pause-btn">⏸</button>
+    </div>
+
+    <!-- Pantalla de pausa -->
+    <div id="pauseScreen" class="screen hidden">
+      <h2>⏸ Pausa</h2>
+      <button id="resumeBtn" class="btn-primary">▶ Continuar</button>
+      <button id="pauseMenuBtn" class="btn-secondary">🏠 Menú</button>
+    </div>
+
+    <!-- Pantalla de Game Over -->
+    <div id="gameOverScreen" class="screen hidden">
+      <h2 class="gameover-title">💀 Game Over</h2>
+      <div class="scores-panel">
+        <div class="score-row">
+          <span>Puntuación</span>
+          <span id="finalScore">0</span>
+        </div>
+        <div class="score-row best">
+          <span>🏆 Récord</span>
+          <span id="highScore">0</span>
+        </div>
+      </div>
+      <button id="restartBtn" class="btn-primary">🔄 Reintentar</button>
+      <button id="menuBtn" class="btn-secondary">🏠 Menú</button>
+    </div>
+
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>
