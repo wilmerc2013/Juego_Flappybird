@@ -1,18 +1,30 @@
-# Flappy Bird Clone / Juego estilo Flappy Bird
+# Flappy Bird Clone — Proyecto desarrollado con Kiro
+# Descripción
 
-# Descripción del proyecto
+Este proyecto consiste en el desarrollo de un videojuego inspirado en el clásico Flappy Bird, implementado utilizando Kiro como entorno de desarrollo asistido por inteligencia artificial.
 
-Este proyecto es un juego inspirado en el clásico Flappy Bird, desarrollado utilizando Kiro. El objetivo principal del juego es controlar un personaje que debe atravesar obstáculos sin chocar, acumulando la mayor cantidad de puntos posible.
-El proyecto fue creado con fines de aprendizaje y práctica de desarrollo de videojuegos, implementando mecánicas simples pero entretenidas, junto con una interfaz visual amigable y dinámica.
+El objetivo principal fue aplicar el flujo completo de trabajo basado en Specs, siguiendo las etapas de:
 
-# Características principales
-Movimiento estilo “tap to fly”.
-Sistema de puntuación en tiempo real.
-Obstáculos generados dinámicamente.
+Requisitos
+Diseño
+Tareas
+Implementación
+
+Durante el desarrollo se utilizaron herramientas de IA para apoyar la planificación, estructura y construcción del videojuego.
+
+# Objetivo del proyecto
+
+Diseñar e implementar un videojuego funcional utilizando Kiro, aplicando metodologías de desarrollo guiadas por especificaciones (Specs) y buenas prácticas de programación.
+
+# Características del juego
+
+Movimiento dinámico del personaje.
+Generación automática de obstáculos.
+Sistema de puntuación.
 Detección de colisiones.
-Pantalla de inicio y reinicio de partida.
-Diseño inspirado en Flappy Bird.
-Código estructurado y fácil de modificar.
+Reinicio de partida.
+Interfaz visual simple e intuitiva.
+Mecánicas inspiradas en Flappy Bird.
 
 # Tecnologías utilizadas
 Kiro
@@ -20,26 +32,35 @@ JavaScript / TypeScript
 HTML5 Canvas
 CSS3
 
-# Objetivo del juego
 
-El jugador debe mantener al personaje en el aire evitando chocar contra los obstáculos. Cada obstáculo superado suma puntos. La partida termina al colisionar.
+# Flujo de desarrollo aplicado
+1. Requisitos
 
-# Ejecutar el proyecto
-npm run dev
-Estructura del proyecto
-/src
-  /assets
-  /components
-  /scenes
-  /styles
-  main.js
-Mejoras futuras
-Agregar sonidos y música.
-Sistema de récords.
-Diferentes niveles de dificultad.
-Compatibilidad móvil.
-Animaciones avanzadas.
-Modo multijugador.
+Se definieron las funcionalidades principales del videojuego:
+
+Movimiento del jugador.
+Obstáculos dinámicos.
+Sistema de puntos.
+Pantalla de Game Over.
+Reinicio de partida.
+
+2. Diseño
+Se diseñó la arquitectura del juego:
+Gestión de escenas.
+Control de físicas.
+Renderizado de elementos.
+Manejo de eventos del teclado o mouse.
+
+3. Tareas
+Se dividió el desarrollo en módulos:
+Creación del jugador.
+Sistema de obstáculos.
+Motor de colisiones.
+UI y puntuación.
+Optimización visual.
+
+4. Implementación
+Se desarrolló el videojuego integrando cada módulo hasta obtener una versión funcional y jugable.
 
 # Capturas del juego
 <img width="1281" height="562" alt="Captura" src="https://github.com/user-attachments/assets/381de264-bcad-4c42-940a-2e2aaa66f6fb" />
