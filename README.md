@@ -5,10 +5,10 @@ Este proyecto consiste en el desarrollo de un videojuego inspirado en el clásic
 
 El objetivo principal fue aplicar el flujo completo de trabajo basado en Specs, siguiendo las etapas de:
 
--Requisitos
--Diseño
--Tareas
--Implementación
+- Requisitos
+- Diseño
+- Tareas
+- Implementación
 
 Durante el desarrollo se utilizaron herramientas de IA para apoyar la planificación, estructura y construcción del videojuego.
 
@@ -27,35 +27,35 @@ Interfaz visual simple e intuitiva.
 Mecánicas inspiradas en Flappy Bird.
 
 # Tecnologías utilizadas
-Kiro
-JavaScript / TypeScript
-HTML5 Canvas
-CSS3
+- Kiro
+- JavaScript / TypeScript
+- HTML5 Canvas
+- CSS3
 
 
 # Flujo de desarrollo aplicado
 1. Requisitos
 Se definieron las funcionalidades principales del videojuego:
--Movimiento del jugador.
--Obstáculos dinámicos.
--Sistema de puntos.
--Pantalla de Game Over.
--Reinicio de partida.
+- Movimiento del jugador.
+- Obstáculos dinámicos.
+- Sistema de puntos.
+- Pantalla de Game Over.
+- Reinicio de partida.
 
 2. Diseño
 Se diseñó la arquitectura del juego:
--Gestión de escenas.
--Control de físicas.
--Renderizado de elementos.
--Manejo de eventos del teclado o mouse.
+- Gestión de escenas.
+- Control de físicas.
+- Renderizado de elementos.
+- Manejo de eventos del teclado o mouse.
 
 3. Tareas
 Se dividió el desarrollo en módulos:
--Creación del jugador.
--Sistema de obstáculos.
--Motor de colisiones.
--UI y puntuación.
--Optimización visual.
+- Creación del jugador.
+- Sistema de obstáculos.
+- Motor de colisiones.
+- UI y puntuación.
+- Optimización visual.
 
 4. Implementación
 Se desarrolló el videojuego integrando cada módulo hasta obtener una versión funcional y jugable.
